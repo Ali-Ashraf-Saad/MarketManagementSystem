@@ -1,4 +1,12 @@
 -- initial mysql db
+sudo apt update
+sudo apt install mariadb-server -y
+  
+sudo systemctl start mariadb
+sudo systemctl enable mariadb
+  
+sudo mysql_secure_installation
+  
 -- create database
 CREATE DATABASE IF NOT EXISTS market_db
 USE market_db;
