@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.MMS.ui.CreateInvoiceController">
+
+    <top>
+        <HBox spacing="10" padding="10">
+            <Button text="Back" styleClass="back-button" onAction="#back"/>
+            <Label text="Create Invoice" styleClass="title"/>
+        </HBox>
+    </top>
+
+    <center>
+        <HBox spacing="15" padding="15">
+
+            <!-- Invoice Items -->
+            <VBox spacing="10" styleClass="card">
+                <Label text="Invoice Items"/>
+                <TableView fx:id="invoiceTable" prefWidth="450"/>
+                <Label text="Total:"/>
+            </VBox>
+
+            <!-- Product Selection -->
+            <VBox spacing="10" styleClass="card">
+                <Label text="Select Product"/>
+                <ComboBox fx:id="categoryBox" promptText="Category"/>
+                <TableView fx:id="productTable" prefHeight="250"/>
+                <TextField fx:id="quantityField" promptText="Quantity"/>
+                <Button text="Add To Invoice" onAction="#addToInvoice"/>
+                <Button text="Finish Invoice" onAction="#finishInvoice"/>
+            </VBox>
+
+        </HBox>
+    </center>
+</BorderPane>

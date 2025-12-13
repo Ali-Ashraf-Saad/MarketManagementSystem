@@ -1,0 +1,140 @@
+/* =========================
+   GLOBAL
+========================= */
+
+.root {
+    -fx-font-family: "Segoe UI", Arial;
+    -fx-background-color: #f4f6f8;
+}
+
+/* =========================
+   TITLES & TEXT
+========================= */
+
+.label {
+    -fx-text-fill: #333;
+    -fx-font-size: 14px;
+}
+
+.title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.button {
+    -fx-background-color: linear-gradient(to bottom, #2563eb, #1e40af);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 18;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #1d4ed8, #1e3a8a);
+}
+
+.button:pressed {
+    -fx-background-color: #1e3a8a;
+}
+
+/* Back buttons */
+.back-button {
+    -fx-background-color: #64748b;
+}
+
+.back-button:hover {
+    -fx-background-color: #475569;
+}
+
+/* =========================
+   TEXT FIELD & AREA
+========================= */
+
+.text-field,
+.text-area,
+.combo-box {
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: #cbd5e1;
+    -fx-padding: 6;
+    -fx-font-size: 13px;
+}
+
+.text-field:focused,
+.text-area:focused,
+.combo-box:focused {
+    -fx-border-color: #2563eb;
+}
+
+/* =========================
+   TABLE VIEW
+========================= */
+
+.table-view {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #e2e8f0;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to right, #1e3a8a, #2563eb);
+}
+
+.table-view .column-header,
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f1f5f9;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #93c5fd;
+}
+
+/* =========================
+   LAYOUT HELPERS
+========================= */
+
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 4);
+}
+
+.separator {
+    -fx-background-color: #cbd5e1;
+}
+
+/* =========================
+   ALERTS
+========================= */
+
+.dialog-pane {
+    -fx-background-color: white;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #2563eb;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.MMS.ui.AddCategoryController">
+
+    <top>
+        <HBox spacing="10" padding="10">
+            <Button text="Back" styleClass="back-button" onAction="#back"/>
+            <Label text="Add Category / Product" styleClass="title"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="15" padding="15" styleClass="card">
+
+            <Label text="New Category"/>
+            <TextField promptText="Category Name"/>
+            <TextArea promptText="Description"/>
+
+            <Separator/>
+
+            <Label text="Add Product to Existing Category"/>
+            <ComboBox promptText="Select Category"/>
+            <TextField promptText="Product Name"/>
+            <TextField promptText="Price"/>
+            <TextField promptText="Quantity"/>
+            <ComboBox promptText="Status"/>
+            <Button text="Save"/>
+
+        </VBox>
+    </center>
+</BorderPane>

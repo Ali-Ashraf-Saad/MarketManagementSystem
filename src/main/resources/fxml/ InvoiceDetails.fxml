@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.MMS.ui.InvoiceDetailsController"
+      spacing="10" padding="15">
+
+    <HBox spacing="10">
+        <Button text="Back" styleClass="back-button" onAction="#back"/>
+        <Label text="Invoice Details" styleClass="title"/>
+    </HBox>
+
+    <VBox spacing="10" styleClass="card">
+        <Label text="Invoice Items"/>
+        <TableView/>
+    </VBox>
+</VBox>

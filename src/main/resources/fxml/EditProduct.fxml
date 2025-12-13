@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.MMS.ui.EditProductController">
+
+    <top>
+        <HBox spacing="10" padding="10">
+            <Button text="Back" styleClass="back-button" onAction="#back"/>
+            <Label text="Edit Product" styleClass="title"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="10" padding="15" styleClass="card">
+            <ComboBox promptText="Select Category"/>
+            <TableView/>
+            <HBox spacing="10">
+                <Button text="Save Changes" onAction="#saveChanges"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
+

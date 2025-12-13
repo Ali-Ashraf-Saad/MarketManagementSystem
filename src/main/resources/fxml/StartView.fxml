@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.MMS.ui.StartController">
+
+    <center>
+        <VBox spacing="20" alignment="CENTER" styleClass="card">
+            <Label text="Market Management System" styleClass="title"/>
+
+            <Button text="Create Invoice" onAction="#createInvoice"/>
+            <Button text="Show Products" onAction="#showProducts"/>
+            <Button text="Show Invoices" onAction="#showInvoices"/>
+            <Button text="Add Product / Category" onAction="#addCategory"/>
+            <Button text="Edit Product" onAction="#editProduct"/>
+        </VBox>
+    </center>
+</BorderPane>
