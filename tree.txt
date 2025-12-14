@@ -1,0 +1,39 @@
+MarketManagementSystem/
+└─ src/
+   └─ main/
+      ├─ java/
+      │  └─ com/
+      │     └─ MMS/
+      │        ├─ MainApp.java
+      │        ├─ db/
+      │        │  └─ DBConnection.java
+      │        ├─ dao/
+      │        │  ├─ CategoryDAO.java
+      │        │  ├─ ProductDAO.java
+      │        │  ├─ InvoiceDAO.java
+      │        │  └─ InvoiceItemDAO.java
+      │        ├─ model/
+      │        │  ├─ Category.java
+      │        │  ├─ Product.java
+      │        │  ├─ Invoice.java
+      │        │  └─ InvoiceItem.java
+      │        ├─ service/
+      │        │  └─ InvoiceService.java
+      │        └─ ui/
+      │           ├─ ScreenManager.java
+      │           ├─ AddCategoryController.java
+      │           ├─ CreateInvoiceController.java
+      │           ├─ EditProductController.java
+      │           ├─ InvoiceDetailsController.java
+      │           └─ MainController.java
+      └─ resources/
+         ├─ fxml/
+         │  ├─ StartView.fxml
+         │  ├─ CreateInvoice.fxml
+         │  ├─ ShowProducts.fxml
+         │  ├─ ShowInvoices.fxml
+         │  ├─ AddCategory.fxml
+         │  ├─ EditProduct.fxml
+         │  └─ InvoiceDetails.fxml
+         └─ css/
+            └─ style.css
