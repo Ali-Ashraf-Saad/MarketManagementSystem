@@ -1,7 +1,7 @@
 package com.MMS.ui;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+import javafx.scene.Node;
 import javafx.scene.layout.StackPane;
 
 import java.util.HashMap;
@@ -10,7 +10,7 @@ import java.util.Map;
 public class ScreenManager {
 
     private final StackPane root;
-    private final Map<String, Parent> screens = new HashMap<>();
+    private final Map<String, Node> screens = new HashMap<>();
 
     public ScreenManager(StackPane root) {
         this.root = root;
@@ -18,16 +18,22 @@ public class ScreenManager {
 
     public void load(String name, String fxml) {
         try {
-            Parent view = FXMLLoader.load(
-                    getClass().getResource("/fxml/" + fxml)
-            );
-            screens.put(name, view);
+            FXMLLoader loader =
+                    new FXMLLoader(getClass().getResource("/fxml/" + fxml));
+            Node screen = loader.load();
+            screens.put(name, screen);
         } catch (Exception e) {
+            System.err.println("Failed to load: " + fxml);
             e.printStackTrace();
         }
     }
 
     public void show(String name) {
-        root.getChildren().setAll(screens.get(name));
+        Node screen = screens.get(name);
+        if (screen == null) {
+            System.err.println("Screen not found: " + name);
+            return;
+        }
+        root.getChildren().setAll(screen);
     }
 }

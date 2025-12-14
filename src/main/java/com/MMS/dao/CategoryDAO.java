@@ -15,4 +15,12 @@ public class CategoryDAO {
         while(rs.next()) list.add(new Category(rs.getInt("id"),rs.getString("name")));
         c.close(); return list;
     }
+    public void add(String name) throws SQLException {
+    Connection c = DBConnection.getConnection();
+    PreparedStatement ps =
+            c.prepareStatement("INSERT INTO categories(name) VALUES(?)");
+    ps.setString(1, name);
+    ps.executeUpdate();
+    c.close();
+}
 }

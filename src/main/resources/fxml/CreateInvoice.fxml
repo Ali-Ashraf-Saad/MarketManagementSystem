@@ -15,17 +15,17 @@
     <center>
         <HBox spacing="15" padding="15">
 
-            <!-- Invoice Items -->
             <VBox spacing="10" styleClass="card">
                 <Label text="Invoice Items"/>
                 <TableView fx:id="invoiceTable" prefWidth="450"/>
                 <Label text="Total:"/>
+                <Label fx:id="totalLabel" style="-fx-font-size:16; -fx-font-weight:bold"/>
             </VBox>
 
-            <!-- Product Selection -->
             <VBox spacing="10" styleClass="card">
                 <Label text="Select Product"/>
-                <ComboBox fx:id="categoryBox" promptText="Category"/>
+                <ComboBox fx:id="categoryBox" promptText="Category"
+                          onAction="#filterProducts"/>
                 <TableView fx:id="productTable" prefHeight="250"/>
                 <TextField fx:id="quantityField" promptText="Quantity"/>
                 <Button text="Add To Invoice" onAction="#addToInvoice"/>

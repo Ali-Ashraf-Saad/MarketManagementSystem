@@ -8,11 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductDAO {
+
     public List<Product> getAll() throws SQLException {
         List<Product> list = new ArrayList<>();
         Connection c = DBConnection.getConnection();
-        ResultSet rs = c.createStatement().executeQuery("SELECT * FROM products");
-        while(rs.next()){
+        ResultSet rs = c.createStatement()
+                .executeQuery("SELECT * FROM products");
+
+        while (rs.next()) {
             list.add(new Product(
                     rs.getInt("id"),
                     rs.getString("name"),
@@ -21,21 +24,51 @@ public class ProductDAO {
                     rs.getInt("category_id")
             ));
         }
-        c.close(); return list;
+        c.close();
+        return list;
     }
 
     public Product getById(int id) throws SQLException {
         Connection c = DBConnection.getConnection();
-        PreparedStatement ps = c.prepareStatement("SELECT * FROM products WHERE id=?");
-        ps.setInt(1,id);
+        PreparedStatement ps =
+                c.prepareStatement("SELECT * FROM products WHERE id=?");
+        ps.setInt(1, id);
+
         ResultSet rs = ps.executeQuery();
-        if(rs.next()){
+        if (rs.next()) {
             Product p = new Product(
-                    rs.getInt("id"),rs.getString("name"),
-                    rs.getDouble("price"),rs.getInt("quantity"),
-                    rs.getInt("category_id"));
-            c.close(); return p;
+                    rs.getInt("id"),
+                    rs.getString("name"),
+                    rs.getDouble("price"),
+                    rs.getInt("quantity"),
+                    rs.getInt("category_id")
+            );
+            c.close();
+            return p;
         }
-        c.close(); return null;
+        c.close();
+        return null;
     }
+    
+    public void updateQuantity(Connection conn, int productId, int newQty)
+            throws SQLException {
+
+        String sql = "UPDATE products SET quantity=? WHERE id=?";
+        PreparedStatement ps = conn.prepareStatement(sql);
+        ps.setInt(1, newQty);
+        ps.setInt(2, productId);
+        ps.executeUpdate();
+    }
+    
+    public void add(Product p) throws SQLException {
+    Connection c = DBConnection.getConnection();
+    PreparedStatement ps = c.prepareStatement(
+            "INSERT INTO products(name,price,quantity,category_id) VALUES(?,?,?,?)");
+    ps.setString(1, p.getName());
+    ps.setDouble(2, p.getPrice());
+    ps.setInt(3, p.getQuantity());
+    ps.setInt(4, p.getCategoryId());
+    ps.executeUpdate();
+    c.close();
+}
 }

@@ -7,27 +7,41 @@
 
     <top>
         <HBox spacing="10" padding="10">
-            <Button text="Back" styleClass="back-button" onAction="#back"/>
-            <Label text="Add Category / Product" styleClass="title"/>
+            <Button text="Back"
+                    styleClass="back-button"
+                    onAction="#back"/>
+            <Label text="Add Category / Product"
+                   styleClass="title"/>
         </HBox>
     </top>
 
     <center>
-        <VBox spacing="15" padding="15" styleClass="card">
+        <VBox spacing="15"
+              padding="15"
+              styleClass="card">
 
             <Label text="New Category"/>
-            <TextField promptText="Category Name"/>
-            <TextArea promptText="Description"/>
+            <TextField fx:id="categoryNameField"
+                       promptText="Category Name"/>
 
             <Separator/>
 
             <Label text="Add Product to Existing Category"/>
-            <ComboBox promptText="Select Category"/>
-            <TextField promptText="Product Name"/>
-            <TextField promptText="Price"/>
-            <TextField promptText="Quantity"/>
-            <ComboBox promptText="Status"/>
-            <Button text="Save"/>
+
+            <ComboBox fx:id="categoryBox"
+                      promptText="Select Category"/>
+
+            <TextField fx:id="productNameField"
+                       promptText="Product Name"/>
+
+            <TextField fx:id="priceField"
+                       promptText="Price"/>
+
+            <TextField fx:id="quantityField"
+                       promptText="Quantity"/>
+
+            <Button text="Save"
+                    onAction="#saveCategory"/>
 
         </VBox>
     </center>
